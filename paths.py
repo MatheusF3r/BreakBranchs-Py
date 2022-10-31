@@ -1,5 +1,6 @@
 def combination(params=str()):
-    ''' # parametro:
+    ''' # Combina todos itens de uma string
+        # parametro:
         # params - recebe a variavel para recombinação
         # retorno:
         # combinations_ - retorna uma lista com o valor recombinado
