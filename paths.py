@@ -40,3 +40,8 @@ def breakArrangement(params=list(),allocation=int()):
         else:
             memory.append(memory_secondary)
     return memory
+
+# ex:
+# itens = ['M','A','C','A','C','O']
+# print(alist(itens,6))
+
