@@ -1,3 +1,5 @@
+from random import choice
+
 def combination(params=str()):
     ''' # Combina todos itens de uma string
         # parametro:
@@ -17,11 +19,24 @@ def combination(params=str()):
         combinations_.append(combinations)
     return combinations_
 
-'''
-web = combination('DOM PEDRO PRIMEIRO')
-c = int()
-for i in web:
-    term = str(web[c]).replace(',','').replace("'",'').replace('[','').replace(']','')
-    print('filetype:xlsx "{}"'.format(term))
-    c +=1
-'''
+# ex: web = combination("1 2 3")
+
+def breakArrangement(params=list(),allocation=int()):
+    ''' # Combina todos itens de uma lista, em uma determinada alocação
+        # parametro:
+        # params - recebe a lista para combinar
+        # allocation - recebe o tamanho da alocação
+        # retorno:
+        # memory - retorna uma lista de todos os valores combinados
+    '''
+    possibilites = len(params) ** len(params)-1
+    memory = list()
+    while len(memory) <= possibilites:
+        memory_secondary = list()
+        while len(memory_secondary) <= allocation-1:
+            memory_secondary.append(choice(params))
+        if memory_secondary in memory:
+            memory_secondary.clear()        
+        else:
+            memory.append(memory_secondary)
+    return memory
